@@ -104,7 +104,7 @@ export const news = [
 ];
 
 export const footerColumns: { heading: string; links: NavItem[] }[] = [
-  ...navMenu.map((g) => ({ heading: g.label, links: g.items.filter((i) => !i.hidden) })),
+  ...navMenu.filter((g) => g.label !== "Support").map((g) => ({ heading: g.label, links: g.items.filter((i) => !i.hidden) })),
   {
     heading: "Support",
     links: [
