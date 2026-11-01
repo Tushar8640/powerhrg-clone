@@ -57,3 +57,22 @@ belonging-content.ts and news-content.ts has the original file name in a comment
 
 - Still missing: community/video-poster.jpg - the reference plays a Vimeo video there (optional still image).
 - Extra from the zips: community/pledge1-band.svg (white Pledge 1% mark) and community/open-file-icon.png.
+
+
+## /careers, /careers/innovations, /careers/partner-with-power, /careers/openings
+
+Careers, Innovations and Partner images are in place from the "Save page as" zips
+(careers/, innovations/, partner/ - accolade logos keep their original file names).
+Mapped from the live DOM: careers/technology.png = Screenshot-2023-06-07-at-8.59-15.png,
+careers/development.png = DPCA_PHL_36-74271_072-1.png, innovations/nitro.jpg = nitro-create.jpg,
+innovations/nitro-bg.png = NITRO-BG-03.png, innovations/tim.jpg = 4096-2731-max-scaled.jpg,
+partner/icons: great-pay = Group-31494.png, reliable-work = Group-3.png, vital-support = Group-1-2.png.
+
+Still missing:
+
+| Save as (in public/assets) | File name on powerhrg.com |
+|---|---|
+| openings/hero.jpg | openings-hero-img-scaled.jpg |
+| openings/hero-mobile.jpg | openings-hero-img-mobile-1.jpg |
+| innovations/video-poster.jpg | (Vimeo video - optional still) |
+| partner/video-poster.jpg | (Vimeo video - optional still) |

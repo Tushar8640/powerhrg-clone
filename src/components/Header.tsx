@@ -8,9 +8,10 @@ import { navMenu } from "@/lib/content";
 type Props = {
   /** Home page: transparent over the hero until scroll. Inner pages: frosted from the start. */
   transparentAtTop?: boolean;
+  cta?: { label: string; href: string };
 };
 
-export default function Header({ transparentAtTop = true }: Props) {
+export default function Header({ transparentAtTop = true, cta = { label: "Get a free quote", href: "#" } }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null); // desktop dropdown
@@ -135,10 +136,10 @@ export default function Header({ transparentAtTop = true }: Props) {
 
         <div className="flex">
           <Link
-            href="#"
+            href={cta.href}
             className="hidden items-center bg-lime px-[26px] text-[13px] font-bold tracking-[3.5px] whitespace-nowrap text-navy uppercase transition-colors hover:bg-white md:flex lg:w-[221px] lg:justify-center"
           >
-            Get a free quote
+            {cta.label}
           </Link>
           <button
             type="button"
@@ -188,8 +189,8 @@ export default function Header({ transparentAtTop = true }: Props) {
               </div>
             );
           })}
-          <Link href="#" className="mt-6 block bg-lime py-4 text-center text-[13px] font-bold tracking-[3.5px] text-navy uppercase">
-            Get a free quote
+          <Link href={cta.href} className="mt-6 block bg-lime py-4 text-center text-[13px] font-bold tracking-[3.5px] text-navy uppercase">
+            {cta.label}
           </Link>
         </nav>
       )}

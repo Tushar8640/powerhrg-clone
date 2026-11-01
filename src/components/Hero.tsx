@@ -21,6 +21,7 @@ type Props = {
   size?: "full" | "short";
   ctaHref?: string;
   ctaLabel?: string;
+  button?: { label: string; href: string };
 };
 
 // Server component: checks the file system so a missing desktop image falls back cleanly,
@@ -36,6 +37,7 @@ export default function Hero({
   size = "full",
   ctaHref = "#services",
   ctaLabel = "Explore services",
+  button,
 }: Props) {
   const mobile = mobileImage ?? image;
   const base = "#7ba3e6";
@@ -84,7 +86,18 @@ export default function Hero({
             </span>
           ))}
         </p>
-        <a href={ctaHref} className={`link-underline text-white ${size === "full" ? "mt-12 lg:mt-20" : "mt-8 lg:mt-10"}`}>
+        {button && (
+          <a
+            href={button.href}
+            className="mt-10 inline-block bg-lime px-6 py-4 text-[12px] font-bold tracking-[3px] text-navy uppercase transition-colors hover:bg-white lg:mt-12 lg:text-[13px] lg:tracking-[3.5px]"
+          >
+            {button.label}
+          </a>
+        )}
+        <a
+          href={ctaHref}
+          className={`link-underline text-white ${button ? "mt-8 flex w-fit lg:mt-10" : size === "full" ? "mt-12 lg:mt-20" : "mt-8 lg:mt-10"}`}
+        >
           {ctaLabel} <span aria-hidden>↓</span>
         </a>
       </div>
