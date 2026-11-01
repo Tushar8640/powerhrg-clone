@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Jost } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +11,11 @@ const jost = Jost({
 export const metadata: Metadata = {
   title: "Power Home Remodeling clone (study project)",
   description: "Local UI study of powerhrg.com - not for deployment.",
+};
+
+// Light-only design: stops browsers auto-darkening the page when the OS is in dark mode
+export const viewport: Viewport = {
+  colorScheme: "only light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
