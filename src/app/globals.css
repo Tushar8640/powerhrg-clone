@@ -27,6 +27,18 @@ html {
   color-scheme: only light;
 }
 
+@layer base {
+  button:not(:disabled),
+  [role="button"],
+  [role="option"],
+  [role="tab"],
+  select,
+  summary,
+  label[for] {
+    cursor: pointer;
+  }
+}
+
 body {
   background: #fff;
   color: var(--color-ink);
