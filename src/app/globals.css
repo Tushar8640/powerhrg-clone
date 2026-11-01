@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Design tokens taken from the reference site (computed styles in the browser).
+  Original font is "Centra No1" (commercial licence) - Jost is a free, similar geometric sans.
+*/
+@theme {
+  --color-navy: #102f48;       /* blue-800: headings, footer, process block */
+  --color-navy-700: #2c4760;   /* bill of rights background */
+  --color-lime: #ddfe5c;       /* hero title, CTA button, accents */
+  --color-sky: #a5c1f5;        /* blue-200: news section */
+  --color-sky-soft: #e4ecfc;   /* blue-200 at 40%: awards section */
+  --color-slate: #c5cbd3;      /* process block while fading in */
+  --color-ink: #1a1a1a;        /* body copy */
+
+  --font-sans: var(--font-jost), -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Letter-spacing used across the site */
+  --tracking-hero: 10px;
+  --tracking-section: 18px;
+  --tracking-card: 5px;
+  --tracking-label: 2.8px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Small uppercase label with a lime underline - "EXPLORE SERVICES", "VIEW BILL OF RIGHTS" etc. */
+@utility link-underline {
+  display: inline-block;
+  padding-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-lime);
+  transition: border-color 200ms;
+  &:hover {
+    border-color: currentColor;
+  }
+}
+
+/* Fade-up on scroll, toggled by the Reveal component */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
