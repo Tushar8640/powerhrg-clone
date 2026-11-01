@@ -24,7 +24,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* Light-only: keep form controls, scrollbars and browser auto-dark from switching in OS dark mode */
   color-scheme: only light;
 }
 

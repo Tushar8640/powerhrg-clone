@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   description: "Local UI study of powerhrg.com - not for deployment.",
 };
 
-// Light-only design: stops browsers auto-darkening the page when the OS is in dark mode
 export const viewport: Viewport = {
   colorScheme: "only light",
 };

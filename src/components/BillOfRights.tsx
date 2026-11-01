@@ -14,7 +14,7 @@ export default function BillOfRights() {
   const r = rights[i];
 
   return (
-    <section className="bg-navy-700 py-20 text-white lg:py-28">
+    <section id="bill-of-rights" className="bg-navy-700 py-20 text-white lg:py-28">
       <div className="mx-auto grid max-w-[1150px] items-center gap-14 px-6 lg:grid-cols-[1fr_1.15fr]">
         <Reveal>
           <p className="text-[11px] font-bold tracking-[2.8px] uppercase opacity-80">Customer</p>
